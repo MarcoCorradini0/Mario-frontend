@@ -41,15 +41,20 @@ import { Router } from "@angular/router";
 export class LoginComponent{
     loading=false;
     error:string|null=null;
-    form=this.fb.group({
-        username:['',Validators.required],
-        password:['',Validators.required]
-    });
+    form:any;
     constructor(
         private fb:FormBuilder,
         private authService:AuthService,
         private router:Router
-    ){}
+    ){
+        this.form=this.fb.group({
+            username:['',Validators.required],
+            password:['',Validators.required]
+        })
+        if(this.authService.isAuthenticated()){
+            this.router.navigate(['/game']);
+        }
+    }
     onSubmit(){
         if(this.form.invalid)return;
         this.loading=true;
