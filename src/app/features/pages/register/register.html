@@ -1,0 +1,12 @@
+<div class="register-container">
+    <form [formGroup]="form"(ngSubmit)="onSubmit()">
+        <h2>Register</h2>
+        <input type="text"placeholder="Username"formControlName="username"/>
+        <input type="email"placeholder="Email"formControlName="email"/>
+        <input type="password"placeholder="Password"formControlName="password"/>
+        <button type="submit" [disabled]="form.invalid||loading">
+            {{loading?'loading...':'Register'}}
+        </button>
+        <p *ngif="error" class="error">{{error}}</p>
+    </form>
+</div>

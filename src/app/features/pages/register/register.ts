@@ -1,45 +1,17 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
-import { AuthService } from "../../core/services/auth.service";
+import { AuthService } from "../../../core/services/auth.service";
 import { Router } from "@angular/router";
 
 @Component({
     standalone:true,
     selector:'app-register',
     imports:[CommonModule,ReactiveFormsModule],
-    template:`
-    <div class="register-container">
-        <form [formGroup]="form"(ngSubmit)="onSubmit()">
-            <h2>Register</h2>
-            <input type="text"placeholder="Username"formControlName="username"/>
-            <input type="email"placeholder="Email"formControlName="email"/>
-            <input type="password"placeholder="Password"formControlName="password"/>
-            <button type="submit" [disabled]="form.invalid||loading">
-                {{loading?'loading...':'Register'}}
-            </button>
-            <p *ngif="error" class="error">{{error}}</p>
-        </form>
-    </div>`,
-    styles:[`
-    .register-container {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 300px;
-    }
-    .error {
-      color: red;
-    }
-    `]
+    templateUrl:`./register.html`,
+    styleUrls:[`./register.scss`]
 })
-export class RegisterComponent{
+export class Register{
     loading=false;
     error:string|null=null;
     form:any;
