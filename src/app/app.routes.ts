@@ -11,5 +11,5 @@ export const routes: Routes = [
     {path:'login',component:Login},
     {path:'register',component:Register},
     {path:'game',component:GameComponent,canActivate:[authGuard]},
-    {path:'**',redirectTo:'game'},
+    {path:'**',redirectTo:'home'},
 ];
