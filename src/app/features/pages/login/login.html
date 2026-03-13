@@ -6,6 +6,6 @@
         <button type="submit" [disabled]="form.invalid||loading">
             {{loading?'loading...':'Login'}}
         </button>
-        <p *ngif="error" class="error">{{error}}</p>
+        <p *ngIf="error" class="error">{{error}}</p>
     </form>
 </div>
