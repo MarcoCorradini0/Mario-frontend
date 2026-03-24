@@ -4,8 +4,8 @@
     padding: 0px 90px 0px 90px;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    outline: 0.67px solid rgba(255, 255, 255, 0.10);
+    background: var(--glass-bg);
+    outline: 0.67px solid var(--glass-border);
     outline-offset: -0.67px;
 }
 .LogoContainer{
@@ -18,11 +18,11 @@
     font-weight: 700;
 }
 .login-btn{
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     padding: 6px 22px 10px 22px;
     border: none;
-    background: #A3FF12;
-    box-shadow: 0 0 20px 0 rgba(163, 255, 18, 0.50), 0 0 40px 0 rgba(163, 255, 18, 0.30);
+    background: var(--button-gradient);
+    box-shadow: var(--neon-shadow);
     font-size: 16px;
     line-height: 24px; /* 150% */
     letter-spacing: 0.16px;

@@ -8,8 +8,16 @@
     --paragraph-color: #8A8A9A;
     --card-color: #1a1a1f;
     --leaderbord-button: #2a2a35;
-    --button-gradient: linear-gradient(180deg, #A3FF12 0%, #0FF 100%);
+    --primary-color: #A3FF12;
+    --primary-cyan: #0FF;
+    --button-gradient: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-cyan) 100%);
     --border-radius: 12px;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.10);
+    --glass-border-light: rgba(255, 255, 255, 0.05);
+    --neon-shadow: 0 0 20px 0 rgba(163, 255, 18, 0.50), 0 0 40px 0 rgba(163, 255, 18, 0.30);
+    --neon-border: rgba(163, 255, 18, 0.50);
+    --neon-bg-light: rgba(163, 255, 18, 0.20);
 }
 .html, body{
     margin: 0px;
