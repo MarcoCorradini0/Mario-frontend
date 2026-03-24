@@ -2,7 +2,14 @@
 :root{
     font-family: "Roboto Mono";
     background: #0F0F14;
-    color: white;
+    color: var(--white-color);
+
+    --white-color: #ffffff;
+    --paragraph-color: #8A8A9A;
+    --card-color: #1a1a1f;
+    --leaderbord-button: #2a2a35;
+    --button-gradient: linear-gradient(180deg, #A3FF12 0%, #0FF 100%);
+    --border-radius: 12px;
 }
 .html, body{
     margin: 0px;

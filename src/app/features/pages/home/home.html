@@ -2,9 +2,33 @@
 <div class="header-wrapper">
     <h1 class="header">Super pixel kingdom</h1>
     <p class="paragraph">Dominate the leaderboard in the most competitive browser-based arcade game. Fast. Secure. Addictive.</p>
-    <div class="hero-wrapper"><img class="hero" src="images/hero.png" alt="Hero"></div>
-    <div class="button-wrapper">
-        <button class="play-btn">Play now</button>
-        <button class="leaderboard-btn">View Leaderboard</button>
+    <div class="hero-wrapper"><img class="hero" src="images/hero.png" alt="Hero">
+        <div class="button-wrapper">
+            <button class="play-btn"><img src="icons/play.svg" alt="Play">Play now</button>
+            <button class="leaderboard-btn"><img src="icons/cup.svg" alt="Leaderboard">View Leaderboard</button>
+        </div>
     </div>
+    <div class="detail-wrapper">
+        <div class="title-wrapper">
+            <h2 class="title">Why Choose Super pixel kingdom?</h2>
+            <p class="paragraph">Built for competitive gamers who demand the best</p>
+        </div>
+        <div class="card-wrapper">
+            @for (item of items; track $index) {
+                <div class="card">
+                    <div class="icon" [innerHTML]="item.icon"></div>
+                    <div class="text-content">
+                        <h3 class="h3">{{ item.title }}</h3>
+                        <p class="paragraph">{{ item.description }}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="carousel-wrapper">
+        <button class="previeuws-btn"><img src="icons/arrow.svg" alt="Previeuws"></button>
+        <img class="hero" src="images/hero.png" alt="Carousel-Image">
+        <button class="next-btn"><img src="icons/arrow.svg" alt="Next"></button>
+    </div>
+    <app-footer/>
 </div>
