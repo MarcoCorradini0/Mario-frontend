@@ -7,23 +7,28 @@
     background: var(--glass-bg);
     outline: 0.67px solid var(--glass-border);
     outline-offset: -0.67px;
-}
-.LogoContainer{
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-.title{
-    font-size: 20px;
-    font-weight: 700;
-}
-.login-btn{
-    border-radius: var(--border-radius);
-    padding: 6px 22px 10px 22px;
-    border: none;
-    background: var(--button-gradient);
-    box-shadow: var(--neon-shadow);
-    font-size: 16px;
-    line-height: 24px; /* 150% */
-    letter-spacing: 0.16px;
+    .LogoContainer{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    .title{
+        font-size: 20px;
+        font-weight: 700;
+        background: var(--text-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .login-btn{
+        cursor: pointer;
+        border-radius: var(--border-radius);
+        padding: 6px 22px 10px 22px;
+        border: none;
+        background: var(--button-gradient);
+        box-shadow: var(--neon-shadow);
+        font-size: 16px;
+        line-height: 24px; /* 150% */
+        letter-spacing: 0.16px;
+    }
 }

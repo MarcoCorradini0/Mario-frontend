@@ -9,29 +9,43 @@ import { Footer } from "../components/footer/footer";
   styleUrl: './home.scss',
 })
 export class Home {
+  // Carousel
+  carouselImages=[
+    'images/carousel/scene1.png',
+    'images/carousel/scene2.png',
+    'images/carousel/scene3.png'
+  ];
+  currentIndex=0;
+  next() {
+    this.currentIndex=(this.currentIndex+1)%this.carouselImages.length;
+  }
+  prev() {
+    this.currentIndex=(this.currentIndex-1+this.carouselImages.length)%this.carouselImages.length;
+  }
+  // Cards
   items = [
     {
-      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Real-Time Action', 
+      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Real-Time Action',
       description: 'Experience fast-paced competitive gameplay with zero lag'
     },
     {
-      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Global Leaderboard', 
+      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Global Leaderboard',
       description: 'Compete with players worldwide and climb the ranks'
     },
     {
-      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Secure Authentication', 
+      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Secure Authentication',
       description: 'JWT RS256 encryption keeps your account protected'
     },
     {
-      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Active Community', 
+      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Active Community',
       description: 'Join thousands of competitive players'
     },
     {
-      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Skill-Based Ranking', 
+      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Skill-Based Ranking',
       description: 'Fair matchmaking based on your performance'
     },
     {
-      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Cross-Platform', 
+      icon: "<img src='icons/play.svg' alt='Play'>", title: 'Cross-Platform',
       description: 'Play on any device with a modern browser'
     }
   ];

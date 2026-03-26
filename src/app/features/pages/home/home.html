@@ -1,18 +1,23 @@
 <app-navbar/>
-<div class="header-wrapper">
-    <h1 class="header">Super pixel kingdom</h1>
-    <p class="paragraph">Dominate the leaderboard in the most competitive browser-based arcade game. Fast. Secure. Addictive.</p>
-    <div class="hero-wrapper"><img class="hero" src="images/hero.png" alt="Hero">
-        <div class="button-wrapper">
-            <button class="play-btn"><img src="icons/play.svg" alt="Play">Play now</button>
-            <button class="leaderboard-btn"><img src="icons/cup.svg" alt="Leaderboard">View Leaderboard</button>
-        </div>
+<!-- Header -->
+<div class="page-wrapper">
+    <div class="header-container">
+        <h1 class="header">Super pixel kingdom</h1>
+        <p class="paragraph">Dominate the leaderboard in the most competitive browser-based arcade game. Fast. Secure. Addictive.</p>
+    </div>  
+    <div class="hero-wrapper">
+        <button class="play-btn"><img src="icons/play.svg" alt="Play">Play now</button>
+        <img class="hero" src="images/hero.png" alt="Hero">
+        <button class="leaderboard-btn"><img src="icons/cup.svg" alt="Leaderboard">View Leaderboard</button>
+        <!-- <div class="button-wrapper"></div> -->
     </div>
+    <!-- Titolo cards -->
     <div class="detail-wrapper">
         <div class="title-wrapper">
             <h2 class="title">Why Choose Super pixel kingdom?</h2>
             <p class="paragraph">Built for competitive gamers who demand the best</p>
         </div>
+        <!-- Cards -->
         <div class="card-wrapper">
             @for (item of items; track $index) {
                 <div class="card">
@@ -25,10 +30,20 @@
             }
         </div>
     </div>
+    <!-- Carosello -->
     <div class="carousel-wrapper">
-        <button class="previeuws-btn"><img src="icons/arrow.svg" alt="Previeuws"></button>
-        <img class="hero" src="images/hero.png" alt="Carousel-Image">
-        <button class="next-btn"><img src="icons/arrow.svg" alt="Next"></button>
+        <button class="previeuws-btn" (click)="prev()"><img src="icons/arrow.svg" alt="Previeuws"></button>
+        <div class="carousel-container">
+            <img class="carouselImage" [src]="carouselImages[currentIndex]" alt="Carousel-Image">
+            <!-- Pallini -->
+            <div class="carousel-dots">
+            @for (img of carouselImages; track $index) {
+                <div class="dot" [class.active]="$index === currentIndex" (click)="currentIndex = $index"></div>
+            }
+            </div>
+        </div>
+        <button class="next-btn" (click)="next()"><img src="icons/arrow.svg" alt="Next"></button>    
     </div>
-    <app-footer/>
+    <!-- Footer -->
+    <app-footer class="app-footer"/>
 </div>
