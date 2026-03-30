@@ -6,7 +6,7 @@
   // Top Section
   .footer-top{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 40px;
     margin-bottom: 50px;
@@ -229,10 +229,6 @@
     padding: 40px 20px 20px;
   }
   .footer-top {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .footer-links-container {
     flex-direction: column;
     gap: 30px;
   }

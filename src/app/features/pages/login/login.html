@@ -1,3 +1,4 @@
+<app-navbar />
 <div class="login-container">
     <form [formGroup]="form"(ngSubmit)="onSubmit()">
         <h2>Login</h2>
@@ -9,3 +10,4 @@
         <p *ngIf="error" class="error">{{error}}</p>
     </form>
 </div>
+<app-footer />
