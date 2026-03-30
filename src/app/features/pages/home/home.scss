@@ -35,7 +35,7 @@
     justify-content: space-evenly;
     padding: 20px;
     border-radius: 16px;
-    border: 0.667px solid var(--glass-border);
+    border: 0.667px solid var(--neon-border);
     background: var(--glass-bg);
     box-shadow: var(--neon-shadow);
     .hero{
@@ -43,7 +43,7 @@
         opacity: 0.4;
         background: url(https://images/hero.png) lightgray 50% / cover no-repeat;
         border-radius: var(--border-radius);
-        border: 2px solid var(--neon-border);
+        border: var(--neon-border);
         background: linear-gradient(180deg, #121218 0%, #1F1F28 100%);
     }
     .play-btn{
@@ -59,23 +59,27 @@
         flex-shrink: 0;
         border-radius: var(--border-radius);
         background: var(--button-gradient);
-        box-shadow: var(--neon-shadow);
+        &:hover{
+            box-shadow: var(--neon-shadow);
+        }
     }
     .leaderboard-btn{
         cursor: pointer;
         font-family: "Roboto Mono";
+        color: var(--white-color);        
         display: flex;
-        border: none;
         width: 105px;
         height: 50px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
+        border: var(--neon-border);
         border-radius: var(--border-radius);
         background: var(--leaderboard-button);
-        color: var(--white-color);        
-        box-shadow: var(--neon-shadow);
+        &:hover{
+            box-shadow: var(--neon-shadow);
+        }
     }
 }
 // Details
@@ -112,12 +116,11 @@
         padding: 24.6px;
         background-color: var(--card-color); 
         border-radius: var(--border-radius);
-        border: 2px solid var(--neon-border);
+        border: var(--neon-border);
         gap: 16px;
         &:hover{
             transition: all 0.05s ease-in-out;
             box-shadow: var(--neon-shadow);
-            border: 2px solid var(--neon-border-active);
         }
         .icon{
             display: flex;
@@ -151,7 +154,7 @@
     align-items: center;
     padding: 20px;
     border-radius: 16px;
-    border: 0.667px solid var(--glass-border);
+    border: 0.667px solid var(--neon-border);
     background: var(--glass-bg);
     box-shadow: var(--neon-shadow);
     .previeuws-btn{
@@ -169,7 +172,7 @@
         opacity: 0.4;
         background: url(https://images/hero.png) lightgray 50% / cover no-repeat;
         border-radius: var(--border-radius);
-        border: 2px solid var(--neon-border);
+        border: var(--neon-border);
         background: linear-gradient(180deg, #121218 0%, #1F1F28 100%);
     }
     .next-btn{
@@ -188,7 +191,7 @@
         .dot{
             width: 10px;
             height: 8px;
-            background-color: var(--neon-border);
+            background: var(--neon-border-active);
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -205,9 +208,87 @@
     width: 100%;
 }
 // Responsive
-@media (max-width: 768px){
-    .card-wrapper{
-        grid-template-columns: 1fr;
-        padding: 0 20px;
+@media (max-width: 1024px) {
+    .header-container {
+        .header {
+            font-size: 40px;
+            line-height: 60px;
+        }
+    }
+    .hero-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        .hero {
+            width: 100%;
+            min-height: 250px;
+        }
+        .play-btn, .leaderboard-btn {
+            width: 180px;
+        }
+    }
+    .carousel-wrapper {
+        flex-direction: row;
+        gap: 20px;
+        .carouselImage {
+            width: 100%;
+            min-height: 250px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        .header {
+            font-size: 32px;
+            line-height: 48px;
+        }
+    }
+    .hero-wrapper {
+        .play-btn, .leaderboard-btn {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
+    .detail-wrapper {
+        padding: 40px 0;
+        .title {
+            font-size: 28px;
+        }
+        .card-wrapper{
+            grid-template-columns: 1fr;
+            padding: 0 20px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        .header {
+            font-size: 24px;
+            line-height: 36px;
+        }
+        .paragraph {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+    .hero-wrapper {
+        padding: 15px;
+        .hero {
+            min-height: 200px;
+        }
+    }
+    .detail-wrapper {
+        padding: 30px 0;
+        .title {
+            font-size: 24px;
+        }
+    }
+    .carousel-wrapper {
+        flex-direction: row;
+        padding: 15px;
+        .carouselImage {
+            min-height: 200px;
+        }
     }
 }
