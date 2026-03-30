@@ -24,3 +24,36 @@
 .html, body{
     margin: 0px;
 }
+// Webkit scrollbar - Chrome, Edge, Opera, Android, Safari, Desktop
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track{
+    background: var(--glass-bg);
+    border-radius: var(--border-radius);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--background-color);
+    box-shadow: var(--neon-shadow);
+    transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: hsl(50, 100%, 60%);
+}
+// Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--glass-bg);
+}
+// iOS & Safari (stilizzazione "soft")
+html {
+  scrollbar-color: var(--primary-color) var(--glass-bg);
+  scrollbar-width: thin;
+}
+// Opzionale: per scroll morbido
+html {
+  scroll-behavior: smooth;
+}
