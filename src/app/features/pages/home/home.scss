@@ -20,13 +20,6 @@
         line-height: 72px; /* 150% */
         letter-spacing: -1.44px;
     }
-    .paragraph{
-        margin: 0;
-        color: var(--paragraph-color);
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 32px; /* 152.381% */
-    }
 }
 // Hero
 .hero-wrapper{
@@ -35,7 +28,7 @@
     justify-content: space-evenly;
     padding: 20px;
     border-radius: 16px;
-    border: 0.667px solid var(--neon-border);
+    border: var(--neon-border);
     background: var(--glass-bg);
     box-shadow: var(--neon-shadow);
     .hero{
@@ -154,7 +147,7 @@
     align-items: center;
     padding: 20px;
     border-radius: 16px;
-    border: 0.667px solid var(--neon-border);
+    border: var(--neon-border);
     background: var(--glass-bg);
     box-shadow: var(--neon-shadow);
     .previeuws-btn{

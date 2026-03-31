@@ -1,12 +1,26 @@
 <app-navbar />
 <div class="login-container">
     <form [formGroup]="form"(ngSubmit)="onSubmit()">
-        <h2>Login</h2>
-        <input type="text"placeholder="Username"formControlName="username"/>
-        <input type="password"placeholder="Password"formControlName="password"/>
+        <!-- Title -->
+        <div class="header">
+            <h2>Welcome Back</h2>
+            <p class="paragraph">Enter your credentials to continue</p>
+        </div>
+        <!-- Username -->
+        <div class="input-box">
+            <h4>USERNAME</h4>
+            <input id="input1" type="text"placeholder="Enter your username"formControlName="username"/>
+        </div>
+        <!-- Password -->
+        <div class="input-box">
+            <h4>PASSWORD</h4>
+            <input id="input2" type="password"placeholder="Enter your password"formControlName="password"/>
+        </div>
+        <!-- Login-btn -->
         <button type="submit" [disabled]="form.invalid||loading">
-            {{loading?'loading...':'Login'}}
+            <img src="icons/profile.svg" alt="Profile-image">{{loading?'loading...':'Login'}}
         </button>
+        <p class="paragraph">Don't have an account? <a href="">Register</a></p>
         <p *ngIf="error" class="error">{{error}}</p>
     </form>
 </div>

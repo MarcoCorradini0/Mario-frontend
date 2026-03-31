@@ -9,6 +9,7 @@
     --background-card:    hsl(251, 45%, 14%, 0.5);
     --white-color:        hsl(0, 0%, 100%);
     --black-color:        hsl(0, 0%, 0%);
+    --red-color:          hsl(0, 100%, 65%);
     --primary-color:      hsl(50, 100%, 50%);   
     --secondary-color:    hsla(45, 100%, 51%, 0.1);
     --paragraph-color:    hsl(240, 7%, 57%);
@@ -20,9 +21,6 @@
     --neon-shadow: 0 0 12px 0 hsla(45, 100%, 51%, 0.6), 0 0 55px 0 hsla(34, 100%, 50%, 0.4), 0 0 80px 0 hsla(26, 100%, 50%, 0.3);
     --neon-border: 1px solid hsla(45, 100%, 51%, 0.2);
     --neon-border-active: hsl(45, 100%, 51%, 0.3);
-}
-.html, body{
-    margin: 0px;
 }
 // Webkit scrollbar - Chrome, Edge, Opera, Android, Safari, Desktop
 ::-webkit-scrollbar{
@@ -56,4 +54,15 @@ html {
 // Opzionale: per scroll morbido
 html {
   scroll-behavior: smooth;
+}
+.html, body{
+    margin: 0px;
+}
+// Paragraph
+.paragraph,input::placeholder{
+    margin: 0;
+    color: var(--paragraph-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 32px; /* 152.381% */
 }
