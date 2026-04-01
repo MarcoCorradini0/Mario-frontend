@@ -16,6 +16,9 @@
     --card-color:         hsl(251, 45%, 14%, 0.5);
     --leaderboard-button: hsl(240, 12%, 19%);
     --glass-bg:           hsla(0, 0%, 100%, 0.05);
+    --form-bg:            rgba(20, 20, 30, 0.4);
+    --input-bg:           hsla(0, 0%, 100%, 0.03);
+    --form-border:        rgba(255, 255, 255, 0.15);
     --button-gradient: linear-gradient(135deg, hsla(50.35, 100%, 50%, 1) 0%, hsla(49.18, 100%, 50%, 1) 7.14%, hsla(48.00, 100%, 50%, 1) 14.29%, hsla(47.06, 100%, 50%, 1) 21.43%, hsla(45.88, 100%, 50%, 1) 28.57%, hsla(44.71, 100%, 50%, 1) 35.71%, hsla(43.53, 100%, 50%, 1) 42.86%, hsla(42.35, 100%, 50%, 1) 50%, hsla(41.18, 100%, 50%, 1) 57.14%, hsla(40.00, 100%, 50%, 1) 64.29%, hsla(38.82, 100%, 50%, 1) 71.43%, hsla(37.65, 100%, 50%, 1) 78.57%, hsla(36.47, 100%, 50%, 1) 85.71%, hsla(35.29, 100%, 50%, 1) 92.86%, hsl(34, 100%, 50%) 100%);
     --text-gradient:   linear-gradient(90deg, hsl(50, 100%, 50%) 0%, hsl(49, 100%, 50%) 7.14%, hsl(48, 100%, 50%) 14.29%, hsl(47, 100%, 50%) 21.43%, hsl(46, 100%, 50%) 28.57%, hsl(45, 100%, 50%) 35.71%, hsl(44, 100%, 50%) 42.86%, hsl(42, 100%, 50%) 50%, hsl(41, 100%, 50%) 57.14%, hsl(40, 100%, 50%) 64.29%, hsl(39, 100%, 50%) 71.43%, hsl(38, 100%, 50%) 78.57%, hsl(36, 100%, 50%) 85.71%, hsl(35, 100%, 50%) 92.86%, hsl(34, 100%, 50%) 100%);
     --neon-shadow: 0 0 12px 0 hsla(45, 100%, 51%, 0.6), 0 0 55px 0 hsla(34, 100%, 50%, 0.4), 0 0 80px 0 hsla(26, 100%, 50%, 0.3);
@@ -42,17 +45,17 @@
     background: hsl(50, 100%, 60%);
 }
 // Firefox
-* {
+*{
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) var(--glass-bg);
 }
 // iOS & Safari (stilizzazione "soft")
-html {
+html{
   scrollbar-color: var(--primary-color) var(--glass-bg);
   scrollbar-width: thin;
 }
 // Opzionale: per scroll morbido
-html {
+html{
   scroll-behavior: smooth;
 }
 .html, body{
@@ -64,5 +67,5 @@ html {
     color: var(--paragraph-color);
     font-size: 16px;
     font-weight: 700;
-    line-height: 32px; /* 152.381% */
+    line-height: 32px; 
 }

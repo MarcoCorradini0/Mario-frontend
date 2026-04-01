@@ -1,3 +1,14 @@
+:host {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    &.hidden {
+        transform: translateY(-100%);
+    }
+}
+
 .container{
     height: 70px;
     display: flex;

@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { AuthService } from "../../../core/services/auth.service";
 import { Router } from "@angular/router";
@@ -17,6 +17,15 @@ export class Login{
     loading=false;
     error:string|null=null;
     form:any;
+    
+    mouseMoveX = 0;
+    mouseMoveY = 0;
+    @HostListener('window:mousemove', ['$event'])
+    onMouseMove(event: MouseEvent) {
+        this.mouseMoveX = Number(((event.clientX / window.innerWidth) * 2 - 1).toFixed(3));
+        this.mouseMoveY = Number(((event.clientY / window.innerHeight) * 2 - 1).toFixed(3));
+    }
+
     constructor(
         private fb:FormBuilder,
         private authService:AuthService,
