@@ -1,49 +1,74 @@
 <app-navbar/>
-<!-- Header -->
-<div class="page-wrapper">
-    <div class="header-container">
-        <h1 class="header">Super pixel kingdom</h1>
-        <p class="paragraph">Dominate the leaderboard in the most competitive browser-based arcade game. Fast. Secure. Addictive.</p>
-    </div>  
-    <div class="hero-wrapper">
-        <button class="play-btn"><img src="icons/play.svg" alt="Play">Play now</button>
-        <img class="hero" src="images/hero.png" alt="Hero">
-        <button class="leaderboard-btn"><img src="icons/cup.svg" alt="Leaderboard">View Leaderboard</button>
-        <!-- <div class="button-wrapper"></div> -->
+<div class="page-wrapper" [style.--mx]="mouseX" [style.--my]="mouseY">
+    <!-- SVG LAVA FILTER -->
+    <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+    </svg>
+    <!-- BACKGROUND LAVA LAMP -->
+    <div class="lava-background">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+        <div class="blob blob4"></div>
+        <div class="blob blob5"></div>
+        <div class="blob blob6"></div>
+        <div class="blob blob7"></div>
     </div>
-    <!-- Titolo cards -->
-    <div class="detail-wrapper">
-        <div class="title-wrapper">
-            <h2 class="title">Why Choose Super pixel kingdom?</h2>
-            <p class="paragraph">Built for competitive gamers who demand the best</p>
+    <!-- LAVA BLUR OVERLAY (frosted glass over lava) -->
+    <div class="lava-blur-overlay"></div>
+    <!-- PIXEL STARS BACKGROUND -->
+    <div class="stars-layer"></div>
+    <div class="stars-layer-extra"></div>
+
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header-container">
+            <h1 class="header">Super pixel kingdom</h1>
+            <p class="paragraph">Dominate the leaderboard in the most competitive browser-based arcade game. Fast. Secure. Addictive.</p>
+        </div>  
+        <!-- Hero -->
+        <div class="hero-wrapper">
+            <button class="play-btn"><img src="icons/play.svg" alt="Play">Play now</button>
+            <img class="hero" src="images/hero.png" alt="Hero">
+            <button class="leaderboard-btn"><img src="icons/cup.svg" alt="Leaderboard">View Leaderboard</button>
         </div>
-        <!-- Cards -->
-        <div class="card-wrapper">
-            @for (item of items; track $index) {
-                <div class="card">
-                    <div class="icon" [innerHTML]="item.icon"></div>
-                    <div>
-                        <h3 class="h3">{{ item.title }}</h3>
-                        <p class="paragraph">{{ item.description }}</p>
+        <!-- Titolo cards -->
+        <div class="detail-wrapper">
+            <div class="title-wrapper">
+                <h2 class="title">Why Choose Super pixel kingdom?</h2>
+                <p class="paragraph">Built for competitive gamers who demand the best</p>
+            </div>
+            <!-- Cards -->
+            <div class="card-wrapper">
+                @for (item of items; track $index) {
+                    <div class="card">
+                        <div class="icon" [innerHTML]="item.icon"></div>
+                        <div>
+                            <h3 class="h3">{{ item.title }}</h3>
+                            <p class="paragraph">{{ item.description }}</p>
+                        </div>
                     </div>
-                </div>
-            }
-        </div>
-    </div>
-    <!-- Carosello -->
-    <div class="carousel-wrapper">
-        <button class="previeuws-btn" (click)="prev()"><img src="icons/arrow.svg" alt="Previeuws"></button>
-        <div class="carousel-container">
-            <img class="carouselImage" [src]="carouselImages[currentIndex]" alt="Carousel-Image">
-            <!-- Pallini -->
-            <div class="carousel-dots">
-            @for (img of carouselImages; track $index) {
-                <div class="dot" [class.active]="$index === currentIndex" (click)="currentIndex = $index"></div>
-            }
+                }
             </div>
         </div>
-        <button class="next-btn" (click)="next()"><img src="icons/arrow.svg" alt="Next"></button>    
+        <!-- Carosello -->
+        <div class="carousel-wrapper">
+            <button class="previeuws-btn" (click)="prev()"><img src="icons/arrow.svg" alt="Previeuws"></button>
+            <div class="carousel-container">
+                <img class="carouselImage" [src]="carouselImages[currentIndex]" alt="Carousel-Image">
+                <!-- Pallini -->
+                <div class="carousel-dots">
+                @for (img of carouselImages; track $index) {
+                    <div class="dot" [class.active]="$index === currentIndex" (click)="currentIndex = $index"></div>
+                }
+                </div>
+            </div>
+            <button class="next-btn" (click)="next()"><img src="icons/arrow.svg" alt="Next"></button>    
+        </div>
     </div>
-    <!-- Footer -->
-    <app-footer class="app-footer"/>
 </div>
+<app-footer class="app-footer"/>

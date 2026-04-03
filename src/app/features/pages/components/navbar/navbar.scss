@@ -1,14 +1,13 @@
-:host {
+:host{
     position: sticky;
     top: 0;
     z-index: 1000;
     display: block;
     transition: transform 0.3s ease-in-out;
-    &.hidden {
+    &.hidden{
         transform: translateY(-100%);
     }
 }
-
 .container{
     height: 70px;
     display: flex;
@@ -20,7 +19,7 @@
         display: flex;
         gap: 8px;
         align-items: center;
-    }
+    }    
     .title{
         font-size: 20px;
         font-weight: 700;
@@ -28,7 +27,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-    }
+    }    
     .login-btn{
         cursor: pointer;
         border-radius: var(--border-radius);
@@ -37,41 +36,37 @@
         background: var(--button-gradient);
         box-shadow: var(--neon-shadow);
         font-size: 16px;
-        line-height: 24px; /* 150% */
+        line-height: 24px; 
         letter-spacing: 0.16px;
     }
 }
-
 // Responsive
-@media (max-width: 1024px) {
-    .container {
+@media (max-width: 1024px){
+    .container{
         padding: 0px 60px;
     }
 }
-
-@media (max-width: 768px) {
-    .container {
+@media (max-width: 768px){
+    .container{
         padding: 0px 40px;
         height: 60px;
-        .title {
+        .title{
             font-size: 18px;
-        }
-        .login-btn {
+        }        
+        .login-btn{
             font-size: 14px;
             padding: 5px 18px 8px 18px;
-        }
+        }    }
     }
-}
-
-@media (max-width: 480px) {
-    .container {
+@media (max-width: 480px){
+    .container{
         padding: 0px 20px;
-        .title {
+        .title{
             font-size: 16px;
-        }
-        .login-btn {
+        }        
+        .login-btn{
             font-size: 14px;
             padding: 4px 16px 6px 16px;
-        }
+        }    
     }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Navbar } from "../components/navbar/navbar";
 import { Footer } from "../components/footer/footer";
 
@@ -9,6 +9,15 @@ import { Footer } from "../components/footer/footer";
   styleUrl: './home.scss',
 })
 export class Home {
+  mouseX = 0;
+  mouseY = 0;
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent) {
+    this.mouseX = (e.clientX / window.innerWidth) - 0.5;
+    this.mouseY = (e.clientY / window.innerHeight) - 0.5;
+  }
+
   // Carousel
   carouselImages=[
     'images/carousel/scene1.png',

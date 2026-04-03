@@ -69,3 +69,99 @@ html{
     font-weight: 700;
     line-height: 32px; 
 }
+// Lava & Stars
+.lava-background{
+    position: fixed;
+    inset: -50px;
+    z-index: -3;
+    overflow: hidden;
+    pointer-events: none;
+    filter: url('#goo'); 
+    background: hsl(240, 16%, 6%); 
+    transform: scale(1.05) translate(calc(var(--mx, 0) * -30px), calc(var(--my, 0) * -30px));
+    transition: transform 0.2s ease-out;
+    // Blobs
+    .blob{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        opacity: 0.85; 
+    }
+    .blob1{ background: hsla(45, 100%, 55%, 1); top: -5%; left: -5%; width: 280px; height: 280px; animation: blobMove1 12s infinite ease-in-out alternate; }
+    .blob2{ background: hsla(260, 100%, 65%, 1); top: 30%; left: 80%; width: 300px; height: 250px; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; animation: blobMove2 14s infinite ease-in-out alternate; }
+    .blob3{ background: hsla(12, 100%, 60%, 1); top: 80%; left: -10%; width: 220px; height: 220px; animation: blobMove3 10s infinite ease-in-out alternate; }
+    .blob4{ background: hsla(330, 100%, 60%, 1); top: 80%; left: 80%; width: 260px; height: 260px; animation: blobMove4 15s infinite ease-in-out alternate; }
+    .blob5{ background: hsla(180, 100%, 45%, 1); top: 40%; left: 10%; width: 180px; height: 280px; border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; animation: blobMove5 13s infinite ease-in-out alternate; }
+    .blob6{ background: hsla(20, 100%, 50%, 1); top: -10%; left: 50%; width: 200px; height: 180px; animation: blobMove6 9s infinite ease-in-out alternate; }
+    .blob7{ background: hsla(280, 100%, 75%, 1); top: 50%; left: 40%; width: 320px; height: 320px; animation: blobMove7 16s infinite ease-in-out alternate; }
+    @keyframes blobMove1{ 0%{transform: translate(0, 0) scale(1) rotate(0deg);} 100%{transform: translate(35vw, 40vh) scale(1.3) rotate(45deg);}}
+    @keyframes blobMove2{ 0%{transform: translate(0, 0) scale(1) rotate(0deg);} 100%{transform: translate(-45vw, 25vh) scale(1.1) rotate(-30deg);}}
+    @keyframes blobMove3{ 0%{transform: translate(0, 0) scale(1) rotate(0deg);} 100%{transform: translate(60vw, -30vh) scale(1.4) rotate(60deg);}}
+    @keyframes blobMove4{ 0%{transform: translate(0, 0) scale(1) rotate(0deg);} 100%{transform: translate(-40vw, -55vh) scale(1.2) rotate(-20deg);}}
+    @keyframes blobMove5{ 0%{transform: translate(0, 0) scale(1) rotate(0deg);} 100%{transform: translate(50vw, -20vh) scale(0.9) rotate(90deg);}}
+    @keyframes blobMove6{ 0%{transform: translate(0, 0) scale(1) rotate(0deg);} 100%{transform: translate(25vw, 60vh) scale(1.5) rotate(-60deg);}}
+    @keyframes blobMove7{ 0%{transform: translate(0, 0) scale(1) rotate(0deg);} 100%{transform: translate(-30vw, -30vh) scale(0.8) rotate(45deg);}}
+}
+// Lava blur
+.lava-blur-overlay{
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    backdrop-filter: blur(100px) saturate(100%);
+    -webkit-backdrop-filter: blur(100px) saturate(100%);
+    background: hsla(240, 20%, 5%, 0.4);
+} 
+// Pixel stars background
+.stars-layer{
+    position: fixed;
+    inset: -50px;
+    z-index: -1;
+    pointer-events: none;
+    background: transparent;
+    overflow: hidden;
+    transform: translate(calc(var(--mx, 0) * 30px), calc(var(--my, 0) * 30px));
+    transition: transform 0.1s ease-out;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: 10vw 20vh hsl(0, 0%, 100%), 20vw 80vh hsl(0, 0%, 100%), 30vw 5vh hsl(0, 0%, 100%), 40vw 45vh hsl(0, 0%, 100%), 50vw 90vh hsl(0, 0%, 100%), 60vw 15vh hsl(0, 0%, 100%), 70vw 65vh hsl(0, 0%, 100%), 80vw 25vh hsl(0, 0%, 100%), 90vw 85vh hsl(0, 0%, 100%), 15vw 40vh hsl(0, 0%, 100%), 25vw 60vh hsl(0, 0%, 100%), 35vw 30vh hsl(0, 0%, 100%), 45vw 70vh hsl(0, 0%, 100%), 55vw 10vh hsl(0, 0%, 100%), 65vw 50vh hsl(0, 0%, 100%), 75vw 80vh hsl(0, 0%, 100%), 85vw 55vh hsl(0, 0%, 100%), 95vw 35vh hsl(0, 0%, 100%), 5vw 75vh hsl(0, 0%, 100%), 8vw 15vh hsl(0, 0%, 100%), 33vw 88vh hsl(0, 0%, 100%), 72vw 12vh hsl(0, 0%, 100%), 48vw 53vh hsl(0, 0%, 100%), 90vw 90vh hsl(0, 0%, 100%), 12vw 61vh hsl(0, 0%, 100%), 77vw 44vh hsl(0, 0%, 100%), 22vw 33vh hsl(0, 0%, 100%), 88vw 77vh hsl(0, 0%, 100%), 55vw 66vh hsl(0, 0%, 100%), 98vw 5vh hsl(0, 0%, 100%);
+        animation: pixelRain 60s linear infinite;
+        opacity: 0.75; // average between 0.6 and 0.9
+    }    
+    &::before{
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        box-shadow: 5vw 5vh hsla(0, 0%, 100%, 0.6), 15vw 95vh hsla(0, 0%, 100%, 0.6), 25vw 25vh hsla(0, 0%, 100%, 0.6), 35vw 75vh hsla(0, 0%, 100%, 0.6), 45vw 15vh hsla(0, 0%, 100%, 0.6), 55vw 55vh hsla(0, 0%, 100%, 0.6), 65vw 85vh hsla(0, 0%, 100%, 0.6), 75vw 35vh hsla(0, 0%, 100%, 0.6), 85vw 15vh hsla(0, 0%, 100%, 0.6), 95vw 65vh hsla(0, 0%, 100%, 0.6), 10vw 80vh hsla(0, 0%, 100%, 0.6), 20vw 40vh hsla(0, 0%, 100%, 0.6), 30vw 90vh hsla(0, 0%, 100%, 0.6), 40vw 30vh hsla(0, 0%, 100%, 0.6), 50vw 70vh hsla(0, 0%, 100%, 0.6), 60vw 10vh hsla(0, 0%, 100%, 0.6), 70vw 50vh hsla(0, 0%, 100%, 0.6), 80vw 90vh hsla(0, 0%, 100%, 0.6), 90vw 20vh hsla(0, 0%, 100%, 0.6), 12vw 12vh hsla(0, 0%, 100%, 0.6), 44vw 88vh hsla(0, 0%, 100%, 0.6), 88vw 44vh hsla(0, 0%, 100%, 0.6), 66vw 33vh hsla(0, 0%, 100%, 0.6), 33vw 66vh hsla(0, 0%, 100%, 0.6), 8vw 82vh hsla(0, 0%, 100%, 0.6), 82vw 8vh hsla(0, 0%, 100%, 0.6);
+        animation: pixelRain 100s linear infinite reverse;
+        opacity: 0.55; 
+    }
+}
+.stars-layer-extra{
+    position: fixed;
+    inset: -50px;
+    z-index: -1;
+    pointer-events: none;
+    background: transparent;
+    overflow: hidden;
+    transform: translate(calc(var(--mx, 0) * 15px), calc(var(--my, 0) * 15px));
+    &::after{
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        box-shadow: 7vw 15vh hsla(180, 100%, 80%, 0.8), 18vw 85vh hsla(280, 100%, 80%, 0.8), 30vw 10vh hsla(45, 100%, 80%, 0.8), 42vw 50vh hsla(180, 100%, 80%, 0.8), 55vw 35vh hsla(280, 100%, 80%, 0.8), 68vw 75vh hsla(45, 100%, 80%, 0.8), 80vw 20vh hsla(180, 100%, 80%, 0.8), 92vw 65vh hsla(280, 100%, 80%, 0.8), 12vw 55vh hsla(45, 100%, 80%, 0.8), 25vw 30vh hsla(180, 100%, 80%, 0.8), 38vw 90vh hsla(280, 100%, 80%, 0.8), 60vw 15vh hsla(45, 100%, 80%, 0.8), 75vw 45vh hsla(180, 100%, 80%, 0.8), 88vw 85vh hsla(280, 100%, 80%, 0.8);
+        opacity: 0.8;
+    }
+}
+@keyframes pixelRain{
+    from{transform: translateY(-100vh);} to{transform: translateY(100vh);}
+}
